@@ -21,8 +21,9 @@
 # limitations under the License.
 # 
 
-if [ $# -ne 4 ]; then
-  echo "Usage: $0 <string_to_replace> <replacement_string> <file(s)/wildcard>"
+if [ $# -ne 3 ]; then
+  BASENAME=`basename $0`
+  echo "Usage: $BASENAME <string_to_replace> <replacement_string> <file(s)/wildcard>"
   exit -1
 fi
 

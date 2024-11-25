@@ -36,4 +36,4 @@ if [ ! -d "${2}" ]; then
   mkdir -p ${DESTINATION_DIR}
 fi
 
-find . -name ${FILES} -exec cp {} ${DESTINATION_DIR} \;
+find ./ -name "${FILES}" -exec cp {} ${DESTINATION_DIR} \;

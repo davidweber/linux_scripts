@@ -21,4 +21,17 @@
 # limitations under the License.
 #
 
+if [ $# -lt 1 ]; then
+  BASENAME=`basename ${0}`
+  echo "Usage: ${BASENAME} <dir>"
+  exit -1
+fi
+
+DIR=${1}
+
+if [ ! -d "${DIR}" ]; then
+  echo "${DIR} is not a valid directory"
+  exit -2
+fi
+
 tar -cvzf $1_`date "+%Y%m%d_%H%M%S"`.tar.gz $1

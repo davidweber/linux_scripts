@@ -23,8 +23,8 @@
 
 if [[ $1 != "" && $2 != "" ]]
 then
-find $2 | xargs grep -s | grep --color=auto -I "$1"
+find "$2"  -exec file {} ";" | grep 'ASCII' | cut -d: -f1 | xargs grep --color=auto "$1"
 else
-find ./ | xargs grep -s | grep --color=auto -I "$1"
+find ./  -exec file {} ";" | grep 'ASCII' | cut -d: -f1 | xargs grep --color=auto "$1"
 fi
 

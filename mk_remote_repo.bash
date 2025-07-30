@@ -36,8 +36,9 @@ git init
 git add README.md
 git commit -m "first commit"
 git branch -M master
-git remote add origin git@github.com:davidweber/${NEW_REPO}.git
-git push -u origin master
+gh repo create --private --push --source ${PWD}
+#Hgit remote add origin git@github.com:davidweber/${NEW_REPO}.git
+#git push -u origin master
 
 #git checkout -b ${NEW_BRANCH}
 #read -p "Push new branch ${NEW_BRANCH} to remote repo? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || exit -2

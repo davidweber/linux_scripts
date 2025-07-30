@@ -21,4 +21,10 @@
 # limitations under the License.
 #
 
+if [ $# -ne 1 ]; then
+  BASENAME=`basename ${0}`
+  echo "Usage: ${BASENAME} <directory>"
+  exit -1
+fi
+
 tar -cvzf $1_`date "+%Y%m%d_%H%M%S"`.tar.gz $1
